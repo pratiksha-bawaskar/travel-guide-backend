@@ -95,19 +95,7 @@ POST	/api/reviews	Add review
 1. Clone the repository
 git clone https://github.com/pratiksha-bawaskar/travel-guide-backend.git
 
-- 2. Open in Eclipse / IntelliJ
-
-- 3. Configure application.properties
-spring.datasource.url=jdbc:mysql://localhost:3306/travelguide
-spring.datasource.username=root
-spring.datasource.password=your_password
-
-spring.jpa.hibernate.ddl-auto=update
-spring.jpa.show-sql=true
-spring.jpa.properties.hibernate.format_sql=true
-
-spring.jpa.open-in-view=false
-server.port=8080
+2. Open in Eclipse / IntelliJ
 
 ## Run the project ##
 
