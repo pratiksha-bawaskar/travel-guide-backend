@@ -1,139 +1,185 @@
-## 🌍 Multilingual Travel Guide – Backend (Spring Boot) ##
+# 🌍 **Multilingual Travel Guide – Backend**
 
-A RESTful backend service for the Multilingual Travel Guide Application.
-This Spring Boot backend handles all data operations including places, users, authentication, reviews, filters, and search APIs.
-It connects to MySQL and provides JSON responses to the React frontend.
+This is the backend service for the **Multilingual Travel Guide Application**, built using **Spring Boot**, **Hibernate (JPA)**, and **MySQL**.
+It provides REST APIs for managing **Places**, **Users**, and **Reviews**.
 
-## ✨ Features ##
+The backend is fully compatible with the **React frontend** and supports **search**, **filter**, **user authentication**, and **review posting**.
 
-📌 Places API (List, search, filter, view details)
+---
 
-🔍 Search by name or location
+## 🚀 **Tech Stack**
 
-🏛 Filter by category (Monument, Historical, Scenic, etc.)
+* **Java 17**
+* **Spring Boot**
+* **Spring Web**
+* **Spring Data JPA**
+* **Hibernate**
+* **MySQL Database**
+* **Maven**
+* **Lombok** (optional)
+* **JUnit + Mockito** (for testing)
 
-👤 User authentication (Register + Login)
+---
 
-📝 Review system (Add review + Get reviews for a place)
+## 📁 **Folder Structure**
 
-🔗 REST API integration
-
-🗃 Database: MySQL
-
-## 🌍 Cross-Origin enabled for frontend communication
-
-🧪 Unit Tests + Controller Tests (JUnit + Mockito)
-
-🧹 DTO + Mapper architecture
-
-🛡 Validations & error handling
-
-📄 Logging using SLF4J
-
-## 🛠 Tech Stack ##
-Backend:
-
-- Spring Boot
-
-- Spring Web
-
-- Spring Data JPA
-
-- Hibernate
-
-- MySQL
-
-- JUnit 5
-
-- Mockito
-
-- Lombok (optional)
-
-## Database: #
-
-- MySQL 8+
-
-## 💡 Project Structure ##
+```
 src/
  ├── main/
- │   ├── java/com/travelguide/
- │   │       ├── controller/
- │   │       ├── service/
- │   │       ├── repository/
- │   │       ├── dto/
- │   │       ├── model/
- │   │       ├── util/ (mapper)
- │   │       └── TravelGuideBackendApplication.java
+ │   ├── java/com/travelguide
+ │   │   ├── controller/
+ │   │   ├── service/
+ │   │   ├── repository/
+ │   │   ├── model/
+ │   │   ├── dto/
+ │   │   └── util/
  │   └── resources/
  │       ├── application.properties
- │       └── data.sql (optional seed data)
+ │       └── schema.sql (optional)
+ │
  └── test/
-     ├── service tests
-     └── controller tests
+     └── java/com/travelguide/ (Unit & Controller tests)
+```
 
+---
 
-## 🔗 API Endpoints ##
-Places API
-Method	Endpoint	Description
-GET	/api/places	Get all places + search + filter
-GET	/api/places/{id}	Get specific place details
-POST	/api/places	Create new place
-Users API
+# ⚙️ **Setup Instructions**
 
-Method	Endpoint	Description
-POST	/api/users/register	Register new user
-POST	/api/users/login	Login user
-GET	/api/users/{id}	Get user by ID
-Reviews API
+## 1️⃣ **Clone the Repository**
 
-Method	Endpoint	Description
-GET	/api/reviews/place/{placeId}	Get all reviews for a place
-POST	/api/reviews	Add review
+```
+git clone https://github.com/yourusername/travel-guide-backend.git
+cd travel-guide-backend
+```
 
+## 2️⃣ **Configure MySQL**
 
-## ⚙️ Setup Instructions ##
-1. Clone the repository
-git clone https://github.com/pratiksha-bawaskar/travel-guide-backend.git
+Create a database:
 
-2. Open in Eclipse / IntelliJ
+```sql
+CREATE DATABASE travel_db;
+```
 
-## Run the project ##
+Update `application.properties`:
 
-Run TravelGuideBackendApplication.java
+```properties
+spring.datasource.url=jdbc:mysql://localhost:3306/travel_db
+spring.datasource.username=root
+spring.datasource.password=yourpassword
 
-Backend will start at:
-👉 http://localhost:8080
+spring.jpa.hibernate.ddl-auto=update
+spring.jpa.show-sql=true
+```
 
-## 🗃 Database Setup ##
+---
 
-Create database in MySQL:
+## 3️⃣ **Build & Run the Application**
 
-CREATE DATABASE travelguide;
+### 👉 Using Maven
 
+```
+mvn clean install
+mvn spring-boot:run
+```
 
-- Optional seed data:
-Add places in /src/main/resources/data.sql.
+### 👉 Or run from Eclipse/IntelliJ
 
-## 🧪 Running Tests ##
+Run `TravelGuideBackendApplication.java` as **Spring Boot App**.
+
+---
+
+# 🔗 **API Endpoints**
+
+## 📍 **Places API**
+
+| Method   | Endpoint           | Description                                |
+| -------- | ------------------ | ------------------------------------------ |
+| **GET**  | `/api/places`      | Get all places (search + filter supported) |
+| **GET**  | `/api/places/{id}` | Get details of a single place              |
+| **POST** | `/api/places`      | Add a new place                            |
+
+---
+
+## 👤 **Users API**
+
+| Method   | Endpoint              | Description         |
+| -------- | --------------------- | ------------------- |
+| **POST** | `/api/users/register` | Register a new user |
+| **POST** | `/api/users/login`    | Login user          |
+| **GET**  | `/api/users/{id}`     | Get user by ID      |
+
+---
+
+## ⭐ **Reviews API**
+
+| Method   | Endpoint                       | Description            |
+| -------- | ------------------------------ | ---------------------- |
+| **GET**  | `/api/reviews/place/{placeId}` | Get reviews of a place |
+| **POST** | `/api/reviews`                 | Add a review           |
+
+---
+
+# 🧪 **Testing (JUnit + Mockito)**
+
+The project includes unit tests for:
+
+✔ PlaceService
+✔ UserService
+✔ ReviewService
+✔ Controller Tests with MockMvc
+
+Run:
+
+```
 mvn test
+```
 
+---
 
-## Includes:
+# 🌐 **CORS Configuration**
 
-- Service tests
+Backend already supports requests from your React app:
 
-- Controller tests
-
-- Repository tests
-
-## 🌐 CORS Support ##
-
-CORS enabled for frontend (React on Vite port):
-
+```
 @CrossOrigin(origins = "*")
+```
+
+You can restrict it to Netlify later:
+
+```
+@CrossOrigin(origins = "https://your-netlify-domain.netlify.app")
+```
+
+---
+
+# 🔐 **Authentication**
+
+* Simple email + password login
+* Can be upgraded to **JWT Authentication** easily
+
+---
+
+# 🗂 **DTO Usage**
+
+The backend uses DTOs for:
+
+* PlaceDTO
+* UserDTO
+* ReviewDTO
+
+This helps maintain clean API request/response formatting.
+
+---
+
+# 🏁 **Conclusion**
+
+This backend powers the **Multilingual Travel Guide App**, providing:
+
+✨ Multi-language support
+✨ Places search & filtering
+✨ Review management
+✨ User login & registration
+✨ Fully tested backend
+✨ MySQL integration
 
 
-## 👩‍💻 Author ##
-
-Pratiksha Bawaskar
-- Full Stack Developer | Java | Spring Boot | React | MySQL
