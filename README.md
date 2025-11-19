@@ -148,4 +148,4 @@ CORS enabled for frontend (React on Vite port):
 ## 👩‍💻 Author ##
 
 Pratiksha Bawaskar
-Full Stack Developer | Java | Spring Boot | React | MySQL
+- Full Stack Developer | Java | Spring Boot | React | MySQL
