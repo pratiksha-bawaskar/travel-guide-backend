@@ -31,28 +31,27 @@ It connects to MySQL and provides JSON responses to the React frontend.
 📄 Logging using SLF4J
 
 ## 🛠 Tech Stack ##
-
 Backend:
 
-Spring Boot
+- Spring Boot
 
-Spring Web
+- Spring Web
 
-Spring Data JPA
+- Spring Data JPA
 
-Hibernate
+- Hibernate
 
-MySQL
+- MySQL
 
-JUnit 5
+- JUnit 5
 
-Mockito
+- Mockito
 
-Lombok (optional)
+- Lombok (optional)
 
 ## Database: #
 
-MySQL 8+
+- MySQL 8+
 
 ## 💡 Project Structure ##
 src/
@@ -96,8 +95,9 @@ POST	/api/reviews	Add review
 1. Clone the repository
 git clone https://github.com/pratiksha-bawaskar/travel-guide-backend.git
 
-2. Open in Eclipse / IntelliJ
-3. Configure application.properties
+- 2. Open in Eclipse / IntelliJ
+
+- 3. Configure application.properties
 spring.datasource.url=jdbc:mysql://localhost:3306/travelguide
 spring.datasource.username=root
 spring.datasource.password=your_password
@@ -123,20 +123,20 @@ Create database in MySQL:
 CREATE DATABASE travelguide;
 
 
-Optional seed data:
+- Optional seed data:
 Add places in /src/main/resources/data.sql.
 
 ## 🧪 Running Tests ##
 mvn test
 
 
-Includes:
+## Includes:
 
-Service tests
+- Service tests
 
-Controller tests
+- Controller tests
 
-Repository tests
+- Repository tests
 
 ## 🌐 CORS Support ##
 
