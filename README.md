@@ -1,10 +1,10 @@
-🌍 Travel Guide – Backend (Spring Boot)
+## 🌍 Multilingual Travel Guide – Backend (Spring Boot) ##
 
 A RESTful backend service for the Multilingual Travel Guide Application.
 This Spring Boot backend handles all data operations including places, users, authentication, reviews, filters, and search APIs.
 It connects to MySQL and provides JSON responses to the React frontend.
 
-✨ Features
+## ✨ Features ##
 
 📌 Places API (List, search, filter, view details)
 
@@ -20,7 +20,7 @@ It connects to MySQL and provides JSON responses to the React frontend.
 
 🗃 Database: MySQL
 
-🌍 Cross-Origin enabled for frontend communication
+## 🌍 Cross-Origin enabled for frontend communication
 
 🧪 Unit Tests + Controller Tests (JUnit + Mockito)
 
@@ -30,7 +30,7 @@ It connects to MySQL and provides JSON responses to the React frontend.
 
 📄 Logging using SLF4J
 
-🛠 Tech Stack
+## 🛠 Tech Stack ##
 
 Backend:
 
@@ -50,11 +50,11 @@ Mockito
 
 Lombok (optional)
 
-Database:
+## Database: #
 
 MySQL 8+
 
-💡 Project Structure
+## 💡 Project Structure ##
 src/
  ├── main/
  │   ├── java/com/travelguide/
@@ -73,24 +73,26 @@ src/
      └── controller tests
 
 
-🔗 API Endpoints
+## 🔗 API Endpoints ##
 Places API
 Method	Endpoint	Description
 GET	/api/places	Get all places + search + filter
 GET	/api/places/{id}	Get specific place details
 POST	/api/places	Create new place
 Users API
+
 Method	Endpoint	Description
 POST	/api/users/register	Register new user
 POST	/api/users/login	Login user
 GET	/api/users/{id}	Get user by ID
 Reviews API
+
 Method	Endpoint	Description
 GET	/api/reviews/place/{placeId}	Get all reviews for a place
 POST	/api/reviews	Add review
 
 
-⚙️ Setup Instructions
+## ⚙️ Setup Instructions ##
 1. Clone the repository
 git clone https://github.com/pratiksha-bawaskar/travel-guide-backend.git
 
@@ -107,14 +109,14 @@ spring.jpa.properties.hibernate.format_sql=true
 spring.jpa.open-in-view=false
 server.port=8080
 
-4. Run the project
+## Run the project ##
 
 Run TravelGuideBackendApplication.java
 
 Backend will start at:
 👉 http://localhost:8080
 
-🗃 Database Setup
+## 🗃 Database Setup ##
 
 Create database in MySQL:
 
@@ -124,7 +126,7 @@ CREATE DATABASE travelguide;
 Optional seed data:
 Add places in /src/main/resources/data.sql.
 
-🧪 Running Tests
+## 🧪 Running Tests ##
 mvn test
 
 
@@ -136,14 +138,14 @@ Controller tests
 
 Repository tests
 
-🌐 CORS Support
+## 🌐 CORS Support ##
 
 CORS enabled for frontend (React on Vite port):
 
 @CrossOrigin(origins = "*")
 
 
-👩‍💻 Author
+## 👩‍💻 Author ##
 
 Pratiksha Bawaskar
 Full Stack Developer | Java | Spring Boot | React | MySQL
