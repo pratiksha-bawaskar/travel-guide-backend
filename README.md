@@ -182,4 +182,13 @@ This backend powers the **Multilingual Travel Guide App**, providing:
 ✨ Fully tested backend
 ✨ MySQL integration
 
+## 🔗 GitHub Repository
+
+👉 Backend: https://github.com/pratiksha-bawaskar/travel-guide-backend
+
+## 👩‍💻 Author
+
+Pratiksha Bawaskar
+📌 Full Stack Java Developer
+📌 Passionate about building real-world projects & clean backend architecture
 
